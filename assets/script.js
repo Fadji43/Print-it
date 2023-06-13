@@ -1,44 +1,65 @@
-const bannerSlide = document.getElementById("#banner");
 const imageBanner = document.getElementById("banner-img");
 const textBanner = document.getElementById("banner-text");
-const dots = document.querySelector("dots");
-const dotBannerActive= document.querySelectorAll('dot-selected')
+const dots = document.querySelector(".dots");
+
 
 const arrowLeft = document.getElementById("arrow-left");
 arrowLeft.addEventListener("click", () => {
 	console.log("ca marche a gauche !"); 
 	indexSlide = (indexSlide - 1 + slides.length) % slides.length;
 	const prevSlide = slides[indexSlide];
-	imageBanner.setAttribute("src","./assets/images/slideshow/" + prevSlide.image);
+	imageBanner.setAttribute("src","./assets/images/slideshow/" + prevSlide.image)
 	textBanner.innerHTML= prevSlide.tagLine;
-	
+	updateDots();
 });
 
 const arrowRight = document.getElementById("arrow-right");
 arrowRight.addEventListener("click", () => {
-	console.log("ca marche a droite!"); 
-	indexSlide = (indexSlide + 1) % slides.length; 
+	indexSlide = (indexSlide + 1) % slides.length;
 	const nextSlide = slides[indexSlide];
 	imageBanner.setAttribute("src","./assets/images/slideshow/" + nextSlide.image)
 	textBanner.innerHTML= nextSlide.tagLine;
-	
+	updateDots();
 	}
 );
+ 
+/*function upDateBanner(indexSlide) {
+	const prevSlide = slides[indexSlide];
+	imageBanner.setAttribute("src","./assets/images/slideshow/" + prevSlideSlide.image);
+	textBanner.innerHTML= prevSlide.tagLine;
+	updateDots();
+};*/
 
 function removeDots () {
-	dots.classList.remove('dot')
+	dots.innerHTML = ""
 };
 
 function drawDots () {
-	for (let indexSlide = 0; indexSlide < 100; indexSlide++)
-	dots.classList.add('dot_selected')
+	for (let i = 0; i < slides.length; i++) {
+		const dotBtn = document.createElement('div')
+		dotBtn.classList.add('dot')
+
+		if (i == indexSlide) {
+			dotBtn.classList.add('dot_selected')
+		}
+		dots.appendChild(dotBtn)
+	}
 };
+	
+	/*const dotElements= dots.querySelectorAll('div')
+	
+	dotElements.forEach((el, i) => {
+		el.classList.remove('dot_selected')
+		if (i== indexSlide)
+			el.classList.add('dot-selected')
+	})*/
+	//for (let i=0; i < slides.length; i++)
+//};
 
- onclick = function(upDateDots) {
-	removeDots();
-	drawDots();
-
- }
+function updateDots() {
+	removeDots()
+	drawDots()
+}; 
 
 let indexSlide = 0;
 
