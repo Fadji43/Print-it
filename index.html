@@ -20,10 +20,7 @@
 <main>
 	<div id="banner">
 		<img class="banner-img" src="./assets/images/slideshow/slide1.jpg" alt="Banner Print-it" id="banner-img">
-		<p>Impressions tous formats <span>en boutique et en ligne</span></p>
-		<img class="banner-img" src="./assets/images/slideshow/slide2.jpg" alt="Banner graff mur">
-		<img class="banner-img" src="./assets/images/slideshow/slide3.jpg" alt="Banner échantillon">
-		<img class="banner-img" src="./assets/images/slideshow/slide4.png" alt="Banner jaune et dessin">
+		<p id="banner-text">Impressions tous formats <span>en boutique et en ligne</span></p>
 		<div class="dots">
 			<div class="dot dot_selected"></div>
 			<div class="dot"></div>
@@ -35,7 +32,7 @@
 				<img src="assets/images/arrow_left.png" alt="fleche gauche">
 			</button>
 			<button id="arrow-right">	
-				<img src="assets/images/arrow_right.png" alt="fleche droite">
+				<img src="assets/images/arrow_right.png" alt="fleche droite" onclick="removeDots(); drawDots();">
 			</button>
 		</div>
 	</div>
