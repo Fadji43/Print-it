@@ -7,28 +7,22 @@ const arrowLeft = document.getElementById("arrow-left");
 arrowLeft.addEventListener("click", () => {
 	console.log("ca marche a gauche !"); 
 	indexSlide = (indexSlide - 1 + slides.length) % slides.length;
-	const prevSlide = slides[indexSlide];
-	imageBanner.setAttribute("src","./assets/images/slideshow/" + prevSlide.image)
-	textBanner.innerHTML= prevSlide.tagLine;
-	updateDots();
+	upDateBanner(indexSlide) ;
 });
 
 const arrowRight = document.getElementById("arrow-right");
 arrowRight.addEventListener("click", () => {
 	indexSlide = (indexSlide + 1) % slides.length;
-	const nextSlide = slides[indexSlide];
-	imageBanner.setAttribute("src","./assets/images/slideshow/" + nextSlide.image)
-	textBanner.innerHTML= nextSlide.tagLine;
-	updateDots();
+	upDateBanner(indexSlide) ;
 	}
 );
  
-/*function upDateBanner(indexSlide) {
+function upDateBanner(indexSlide) {
 	const prevSlide = slides[indexSlide];
-	imageBanner.setAttribute("src","./assets/images/slideshow/" + prevSlideSlide.image);
+	imageBanner.setAttribute("src","./assets/images/slideshow/" + prevSlide.image);
 	textBanner.innerHTML= prevSlide.tagLine;
-	updateDots();
-};*/
+	updateDots()
+}
 
 function removeDots () {
 	dots.innerHTML = ""
