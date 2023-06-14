@@ -39,16 +39,6 @@ function drawDots () {
 		dots.appendChild(dotBtn)
 	}
 };
-	
-	/*const dotElements= dots.querySelectorAll('div')
-	
-	dotElements.forEach((el, i) => {
-		el.classList.remove('dot_selected')
-		if (i== indexSlide)
-			el.classList.add('dot-selected')
-	})*/
-	//for (let i=0; i < slides.length; i++)
-//};
 
 function updateDots() {
 	removeDots()
